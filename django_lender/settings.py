@@ -31,6 +31,8 @@ ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split()
 # Application definition
 
 INSTALLED_APPS = [
+    'django_lender',
+    'lender_books',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -125,3 +127,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/lender_books/media/'
+MEDIA_ROOT = '/src/lender_books/media/'
