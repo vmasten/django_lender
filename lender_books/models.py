@@ -1,6 +1,10 @@
+"""Models used by the book lender app."""
 from django.db import models
 
+
 class Book(models.Model):
+    """Model for book entry in database."""
+
     AVAILABLE = 'AV'
     CHECKED_OUT = 'CO'
     STATUS_CHOICES = (
@@ -19,4 +23,5 @@ class Book(models.Model):
     last_borrowed = models.DateTimeField(auto_now=True)
 
     def __str__(self):
+        """Str currently gets the title and status from the model."""
         return f'{self.title} ({self.status})'

@@ -1,3 +1,4 @@
+"""Paths used by the views in rendering."""
 from .views import book_detail, book_list
 from django.urls import path
 
