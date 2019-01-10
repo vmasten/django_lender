@@ -2,16 +2,16 @@
 Django Book Lender
 
 **Author**: Vince Masten
-**Version**: 1.0.1
+**Version**: 1.0.2
 
 ## Overview
-An HTTP server built in Django that allows for the storing of books in a database. Currently in development.
+An HTTP server built in Django that allows for the creation of a user account and the storing of books in a database. Currently in development.
 
 ## Getting Started
 1. Download the repo
 1. Ensure your virtual environment matches that of the Pipfile
 1. Install Docker Desktop if needed, then spin up the container with docker-compose up
-2. Go to localhost:8000 to see the mostly nonfunctional homepage.
+2. Go to localhost:8000 to create a new user, and then watch your docker-compose terminal window for the activation link. After that, marvel at the pre-created db book instances.
 
 ## Architecture
 Uses Python, pipenv (with a variety of packages--see Pipfile for more information) and Django as a framework for loading and rendering the pages.
