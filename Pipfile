@@ -14,6 +14,7 @@ django = "*"
 psycopg2-binary = "*"
 pillow = "*"
 coverage = "*"
+django-registration = "*"
 
 [requires]
 python_version = "3.6"
