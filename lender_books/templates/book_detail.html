@@ -1,0 +1,14 @@
+{% extends "generic/base.html" %}
+
+{% block title %}Book Detail{% endblock title %}
+{% block content %}
+<div class="book_detail">
+<h3>{{book.title}}</h3>
+<img src="{{book.cover_image.url}}" height="300"</>
+<p>{{book.author}}</p>
+<p>{{book.status}}</p>
+<p>{{book.year}}</p>
+<p>{{book.date_added}}</p>
+<p>{{book.last_borrowed}}</p>
+</div>
+{% endblock content %}
