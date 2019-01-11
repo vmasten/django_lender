@@ -19,6 +19,11 @@ Uses Python, pipenv (with a variety of packages--see Pipfile for more informatio
 ## Change Log
 
 Author: Vince Masten <vmasten@me.com>
+Date:   Wed Jan 9 22:46:24 2019 -0800
+
+    auth wired up
+
+Author: Vince Masten <vmasten@me.com>
 Date:   Wed Jan 9 22:00:08 2019 -0800
 
     fixed all the things

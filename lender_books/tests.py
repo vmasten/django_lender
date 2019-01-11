@@ -1,7 +1,9 @@
 """Tests on the model and views for the book lender app."""
-from django.test import TestCase, RequestFactory
+from django.test import TestCase, RequestFactory, Client
 from .models import Book
 from django.core.files.uploadedfile import SimpleUploadedFile
+from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 
 
 class TestBookModel(TestCase):
@@ -78,10 +80,14 @@ class TestBookViews(TestCase):
                             year='2002',
                             status='AV')
 
+        user = User.objects.create_user('test', 'user@example.com', 'pass')
+        self.client = Client()
+        self.client.force_login(user=user, backend=None)
+
     def test_list_view_context(self):
         """Test the book list view."""
         from .views import book_list
-        request = self.request.get('')
+        request = self.client.get('', follow=True)
         response = book_list(request)
         self.assertIn(b'Sphere', response.content)
 
