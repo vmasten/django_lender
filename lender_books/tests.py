@@ -11,21 +11,27 @@ class TestBookModel(TestCase):
 
     def setUp(self):
         """Create some book instances."""
+
+        user = User.objects.create_user('test', 'user@example.com', 'pass')
+
         Book.objects.create(
                             title='Sphere',
                             author='Michael Chrichton',
                             year='1992',
-                            status='AV')
+                            status='AV',
+                            user=user)
         Book.objects.create(
                             title='The Killing Floor',
                             author='Lee Child',
                             year='1996',
-                            status='CO')
+                            status='CO',
+                            user=user)
         Book.objects.create(
                             title='The Lovely Bones',
                             author='Alice Sebold',
                             year='2002',
-                            status='AV')
+                            status='AV',
+                            user=user)
 
     def test_book_titles(self):
         """Test whether title field is correct."""
@@ -60,6 +66,9 @@ class TestBookViews(TestCase):
     """Class to test the views."""
 
     def setUp(self):
+
+        user = User.objects.create_user('test', 'user@example.com', 'pass')
+
         """Create some more book instances."""
         self.request = RequestFactory()
 
@@ -68,19 +77,21 @@ class TestBookViews(TestCase):
                                         cover_image='jp.jpg',
                                         author='Michael Chrichton',
                                         year='1992',
-                                        status='AV')
+                                        status='AV',
+                                        user=user)
         Book.objects.create(
                             title='The Killing Floor',
                             author='Lee Child',
                             year='1996',
-                            status='CO')
+                            status='CO',
+                            user=user)
         Book.objects.create(
                             title='The Lovely Bones',
                             author='Alice Sebold',
                             year='2002',
-                            status='AV')
+                            status='AV',
+                            user=user)
 
-        user = User.objects.create_user('test', 'user@example.com', 'pass')
         self.client = Client()
         self.client.force_login(user=user, backend=None)
 
