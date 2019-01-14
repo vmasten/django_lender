@@ -19,6 +19,31 @@ Uses Python, pipenv (with a variety of packages--see Pipfile for more informatio
 ## Change Log
 
 Author: Vince Masten <vmasten@me.com>
+Date:   Sun Jan 13 20:21:09 2019 -0800
+
+    done-ish
+
+Author: Vince Masten <vmasten@me.com>
+Date:   Sun Jan 13 14:57:12 2019 -0800
+
+    back to baseline
+
+Author: Vince Masten <vmasten@me.com>
+Date:   Thu Jan 10 23:23:58 2019 -0800
+
+    super broken
+
+Author: Vince Masten <vmasten@me.com>
+Date:   Thu Jan 10 22:40:54 2019 -0800
+
+    dunno
+
+Author: Vince Masten <vmasten@me.com>
+Date:   Thu Jan 10 17:55:01 2019 -0800
+
+    poking at auth tests
+
+Author: Vince Masten <vmasten@me.com>
 Date:   Wed Jan 9 22:46:24 2019 -0800
 
     auth wired up
