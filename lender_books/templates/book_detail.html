@@ -1,14 +1,18 @@
 {% extends "generic/base.html" %}
+{% load extras %}
+{% load tz %}
 
 {% block title %}Book Detail{% endblock title %}
 {% block content %}
-<div class="book_detail">
-<h3>{{book.title}}</h3>
-<img src="{{book.cover_image.url}}" height="300"</>
-<p>{{book.author}}</p>
-<p>{{book.status}}</p>
-<p>{{book.year}}</p>
-<p>{{book.date_added}}</p>
-<p>{{book.last_borrowed}}</p>
+<div class="two columns">
+  <img class="cover" src="{{book.cover_image.url}}"</>
+</div>
+<div class="book_detail two columns">
+  <h3>{{book.title|title}}</h3>
+  <p>{{book.author|title}}</p>
+  <p>Originally relased: {{book.year}}</p>
+  <p>Added to library: {{book.date_added|date:"M d, Y" }}</p>
+  <p>Checked out: {{book.last_borrowed|date:"M d, Y" }}</p>
+  <p>Due {{book.last_borrowed|get_due_date}}
 </div>
 {% endblock content %}

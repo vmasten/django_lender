@@ -1,5 +1,6 @@
 """Models used by the book lender app."""
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Book(models.Model):
@@ -11,6 +12,7 @@ class Book(models.Model):
         (AVAILABLE, 'available'),
         (CHECKED_OUT, 'checked out')
     )
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='books')
     cover_image = models.ImageField()
     title = models.TextField()
     author = models.TextField()

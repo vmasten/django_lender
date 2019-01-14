@@ -16,7 +16,7 @@ def book_detail(request, pk=None):
 
 @login_required
 def book_list(request):
-    """Render the whole list of books for a given user."""
+    """Render a user's list of checked-out books."""
     context = {
         'books': get_list_or_404(Book)
     }
